@@ -1,0 +1,31 @@
+services:
+  web_green:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+#      - DB_URL=rds-endpoint
+#      - DB_USERNAME=username
+#      - DB_PASSWORD=password
+    expose:
+      - "8080"
+
+  web_blue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+#      - DB_URL=rds-endpoint
+#      - DB_USERNAME=username
+#      - DB_PASSWORD=password
+    expose:
+      - "8080"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
