@@ -29,5 +29,5 @@ services:
       - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - /etc/letsencrypt/live/link-hub.site/fullchain.pem
-      - /etc/letsencrypt/live/link-hub.site/privkey.pem
+      - /etc/letsencrypt/live/link-hub.site/fullchain.pem:/etc/letsencrypt/live/link-hub.site/fullchain.pem
+      - /etc/letsencrypt/live/link-hub.site/privkey.pem:/etc/letsencrypt/live/link-hub.site/privkey.pem
