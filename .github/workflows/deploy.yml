@@ -23,7 +23,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t jaeyoungahn/linkhub:${GITHUB_REF#refs/tags/} .
+          docker build -t jaeyoungahn/linkhub:${GITHUB_RUN_NUMBER} .
           docker tag jaeyoungahn/linkhub:${GITHUB_RUN_NUMBER} jaeyoungahn/linkhub:latest
           docker push jaeyoungahn/linkhub:${GITHUB_RUN_NUMBER}
           docker push jaeyoungahn/linkhub:latest
