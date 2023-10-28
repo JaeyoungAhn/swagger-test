@@ -9,24 +9,24 @@ ACTIVE_ENV=$(docker exec -it swagger-test_nginx_1 nginx -T | grep "server web_" 
 # Switch between blue and green environments
 if [ "$ACTIVE_ENV" == "green" ]; then
   # Stop and remove the current blue environment
-  docker-compose stop swagger-test_web_blue_1
-  docker-compose rm -f swagger-test_web_blue_1
+  docker-compose stop web_blue
+  docker-compose rm -f web_blue
 
   # Start the blue environment
   docker-compose up -d web_blue
 
   # Switch traffic to the blue environment
-  docker exec -T swagger-test_nginx_1 sed -i 's/web_green/web_blue/' /etc/nginx/nginx.conf
-  docker exec -T swagger-test_nginx_1 nginx -s reload
+  docker exec swagger-test_nginx_1 sed -i 's/web_green/web_blue/' /etc/nginx/nginx.conf
+  docker exec swagger-test_nginx_1 nginx -s reload
 else
   # Stop and remove the current green environment
-  docker-compose stop swagger-test_web_green_1
-  docker-compose rm -f swagger-test_web_green_1
+  docker-compose stop web_green
+  docker-compose rm -f web_green
 
   # Start the green environment
   docker-compose up -d web_green
 
   # Switch traffic to the green environment
-  docker exec -T swagger-test_nginx_1 sed -i 's/web_blue/web_green/' /etc/nginx/nginx.conf
-  docker exec -T swagger-test_nginx_1 nginx -s reload
+  docker exec swagger-test_nginx_1 sed -i 's/web_blue/web_green/' /etc/nginx/nginx.conf
+  docker exec swagger-test_nginx_1 nginx -s reload
 fi
