@@ -29,7 +29,7 @@ else
   docker-compose up -d web_green
 
   # Switch traffic to the green environment
-  docker-compose exec nginx sh -c "sed 's/web_green/web_blue/' /etc/nginx/nginx.conf > /etc/nginx/nginx.conf.new && \
+  docker-compose exec nginx sh -c "sed 's/web_blue/web_green/' /etc/nginx/nginx.conf > /etc/nginx/nginx.conf.new && \
   cat /etc/nginx/nginx.conf.new > /etc/nginx/nginx.conf && \
   rm /etc/nginx/nginx.conf.new"
   docker-compose exec nginx nginx -s reload
