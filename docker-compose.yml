@@ -1,6 +1,6 @@
 services:
   web_green:
-    image: jaeyoungahn/linkhub:web-latest
+    image: jaeyoungahn/linkhub:latest
 #    build:
 #      context: .
 #      dockerfile: Dockerfile
@@ -13,7 +13,7 @@ services:
       - "8080"
 
   web_blue:
-    image: jaeyoungahn/linkhub:web-latest
+    image: jaeyoungahn/linkhub:latest
 #    build:
 #      context: .
 #      dockerfile: Dockerfile
