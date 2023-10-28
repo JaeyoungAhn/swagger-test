@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Pull the latest Docker image
-docker pull jaeyoungahn/linkhub:web-latest
+docker pull jaeyoungahn/linkhub:application-latest
 
 # Get the current active environment
 ACTIVE_ENV=$(docker exec swagger-test_nginx_1 nginx -T | grep "server web_" | awk -F'_' '{print $2}' | cut -d ':' -f 1)
