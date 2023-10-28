@@ -1,8 +1,9 @@
 services:
   web_green:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: jaeyoungahn/linkhub:web-latest
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
     environment:
       - SPRING_PROFILES_ACTIVE=prod
 #      - DB_URL=rds-endpoint
@@ -12,9 +13,10 @@ services:
       - "8080"
 
   web_blue:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: jaeyoungahn/linkhub:web-latest
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
     environment:
       - SPRING_PROFILES_ACTIVE=prod
 #      - DB_URL=rds-endpoint
