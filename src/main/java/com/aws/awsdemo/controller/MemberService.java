@@ -17,6 +17,7 @@ public class MemberService {
         System.out.println("came to place123");
         System.out.println("ci/cd success");
         System.out.println("ci/cd success2");
+        System.out.println("ci/cd success4");
     }
 
     @PostMapping("/members")
