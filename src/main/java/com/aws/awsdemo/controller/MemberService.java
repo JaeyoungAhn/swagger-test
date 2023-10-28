@@ -14,10 +14,7 @@ public class MemberService {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @Operation(summary = "회원 조회", description = "회원을 조회합니다.")
     public void get() {
-        System.out.println("came to place123");
-        System.out.println("ci/cd success");
-        System.out.println("ci/cd success2");
-        System.out.println("ci/cd success4");
+        System.out.println("ci/cd succeed");
     }
 
     @PostMapping("/members")
