@@ -41,5 +41,5 @@ spring:
     activate:
       on-profile: prod
 my:
-  message: "Hello, world! - prod"
+  message: "${MY_MESSAGE}"
 ---
