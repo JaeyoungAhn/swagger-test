@@ -1,6 +1,8 @@
 services:
   web_green:
     image: ${LINKHUB_IMAGE}:latest
+    env_file:
+      - .env
     environment:
       - SPRING_PROFILES_ACTIVE=prod
     expose:
@@ -8,6 +10,8 @@ services:
 
   web_blue:
     image: ${LINKHUB_IMAGE}:latest
+    env_file:
+      - .env
     environment:
       - SPRING_PROFILES_ACTIVE=prod
     expose:
