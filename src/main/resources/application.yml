@@ -33,9 +33,13 @@ spring:
   config:
     activate:
       on-profile: local
-
+my:
+  message: "Hello, world! - local"
 ---
 spring:
   config:
     activate:
       on-profile: prod
+my:
+  message: "Hello, world! - prod"
+---
