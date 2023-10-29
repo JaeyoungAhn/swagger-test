@@ -1,7 +1,12 @@
 #!/bin/bash
 
+# Load environment variables from .env file
+if [ -f .env ]; then
+  export $(cat .env | xargs)
+fi
+
 # Pull the latest Docker image
-docker pull jaeyoungahn/linkhub:latest
+docker pull $LINKHUB_IMAGE
 
 # Get the current active environment
 ACTIVE_ENV=$(docker exec swagger-test_nginx_1 nginx -T | grep "server web_" | awk -F'_' '{print $2}' | cut -d ':' -f 1)
