@@ -15,6 +15,7 @@ public class MemberService {
     @Operation(summary = "회원 조회", description = "회원을 조회합니다.")
     public void get() {
         System.out.println("ci/cd succeed");
+        System.out.println("ci/cd succeed");
     }
 
     @PostMapping("/members")
